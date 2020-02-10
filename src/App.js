@@ -38,27 +38,33 @@ export default function App() {
     } else {
       setMovies([]);
     }
+  }, [query]);
+
+  useEffect(() => { 
     if (localStorage.getItem("liked") !== null) {
       const likedMovies = JSON.parse(localStorage.getItem('liked'))
       setLikedMovieList(likedMovies);
     }
-  }, [query]);
-
+  }, []);
 
   function handleLike(movie) {
     setLikedMovieList(movies => {
       const isMovieHere = movies.some(film => film.id === movie.id);
       if (!isMovieHere) {
-        var updatedMovies = ([...movies, movie])
+        const updatedMovies = ([...movies, movie])
+        saveInStorage(updatedMovies)
+        return updatedMovies
       } else {
-        var updatedMovies = movies.filter(film => film.id !== movie.id) 
+        const updatedMovies = movies.filter(film => film.id !== movie.id) 
+        saveInStorage(updatedMovies)
+        return updatedMovies
       }
-      setLikedMovieList(updatedMovies);
-      localStorage.setItem('liked', JSON.stringify(updatedMovies));
     })
   };
 
-
+  function saveInStorage(movies) {
+    localStorage.setItem('liked', JSON.stringify(movies));
+  }
 
   return (
     <div className="search">
@@ -77,11 +83,18 @@ export default function App() {
         ) : query.length !== 0 && movies.length === 0 ? (
           <p>No movies found</p>
         ) : (
-          movies.map(movie => <p
-            key={movie.id}
-            onClick={() => setSelectedMovie(movie)}
-          >{movie.title}
-          </p>)
+          movies.map(movie => {
+            const isMovieLiked = likedMoviesList.some(
+              film => film.id === movie.id);
+            return ( 
+              <p key={movie.id} onClick={() => setSelectedMovie(movie)}>
+                {movie.title} 
+                {isMovieLiked && (
+                  <i class="fa fa-heart red"></i>
+                )}
+              </p>
+            );
+          })
         )}
       </div>
       <MovieDetails 
