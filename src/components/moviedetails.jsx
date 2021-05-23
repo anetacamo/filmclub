@@ -1,35 +1,48 @@
-import React from "react";
-import Like from "./like.jsx";
-import Stars from "./stars.jsx";
+import React, { useState } from 'react';
+import Like from './like.jsx';
+import Seen from './seen.jsx';
 
-export default function MovieDetails(props) {
+import Stars from './stars.jsx';
+
+const MovieDetails = ({ movie, handleLike, handleSeen, handleDirector }) => {
+  const [director, setDirector] = useState('add director');
   return (
-    <div className="film-details">
-      {props.movie ? (
+    <div className='film-details'>
+      {movie ? (
         <div>
           <h2>
-            <span>{props.movie.title}</span> 
-            {props.movie.title !== props.movie.original_title ? (
-              <span className="red"> {props.movie.original_title}</span>
-            ) : (null)}
+            <span>{movie.title}</span>
+            {movie.title !== movie.original_title ? (
+              <span className='red'> {movie.original_title}</span>
+            ) : null}
           </h2>
-          <Like 
-            liked={props.movies.some(film => film.id === props.movie.id)}
-            onClick={props.handleClick}
+          <Like onClick={handleLike} featured={movie.like} />
+          <Seen
+            onClick={handleSeen}
+            featured={movie.seen === undefined ? false : movie.seen}
           />
-          <Stars 
-            popularity={props.movie.popularity/10} 
-          />
-          <span> {props.movie.vote_count} votes</span>
-          <p>{props.movie.overview}</p>
+          <Stars popularity={movie.vote_average / 2} />
+          <span> {movie.vote_count} votes</span>
+          <p>{movie.overview}</p>
           <p>
-            <b>release date</b> {props.movie.release_date}<br></br>
-            <b>original language</b> {props.movie.original_language}
+            <b>release date</b> {movie.release_date}
+            <br></br>
+            <b>original language</b> {movie.original_language}
+            <br></br>
+            <b className='underlined'>director</b> {movie.director}
           </p>
-        </div> 
+          <div className='director'>
+            <input
+              onChange={(e) => setDirector(e.target.value)}
+              placeholder='add director'
+            />
+            <button onClick={() => handleDirector(director)}>+</button>
+          </div>
+        </div>
       ) : (
         <p></p>
       )}
     </div>
-  )
-}
+  );
+};
+export default MovieDetails;
