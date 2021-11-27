@@ -1,0 +1,36 @@
+.user-greet {
+  .form-head {
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    .red.underlined {
+      margin-top: -8px;
+      margin-bottom: 0px;
+      cursor: pointer;
+    }
+  }
+  &.open {
+    .signup-form {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      z-index: 4;
+      padding-top: calc(50vh - 120px);
+      top: 0px;
+      position: absolute;
+    }
+  }
+  p,
+  input,
+  button {
+    margin: 8px 0;
+    margin-left: 8px;
+  }
+  .signup-form {
+    display: none;
+    text-align: center;
+  }
+}

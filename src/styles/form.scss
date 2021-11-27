@@ -1,0 +1,86 @@
+input,
+button {
+  border: 2px solid $red;
+  border-radius: 4px;
+  outline: none;
+  padding: 10px 14px;
+  font-weight: 900;
+  color: $red;
+  font-size: 16px;
+  background-color: transparent;
+}
+button {
+  padding: 12px 32px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  cursor: pointer;
+  &:hover {
+    transition-duration: 350ms;
+    background-color: $red;
+    color: white;
+  }
+  &.small {
+    padding: 7px 14px;
+    padding-top: 7px;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: none;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  &.gray {
+    background-color: #f2f2f2;
+    color: gray;
+    border-color: #f2f2f2;
+  }
+}
+
+input {
+  color: $black;
+  &:focus {
+    background-color: #f2f2f2;
+    transition-duration: 350ms;
+    border-color: #f2f2f2;
+  }
+}
+.search-field {
+  font-size: 3.375rem;
+  border: none;
+  background: none;
+  width: auto;
+  padding: 0;
+  &:focus {
+    background-color: transparent;
+  }
+  &::placeholder {
+    color: $purple;
+  }
+}
+
+::placeholder {
+  color: lightgray;
+}
+::-ms-input-placeholder {
+  color: lightgray;
+}
+
+/* unused 
+.director input {
+  border-radius: 0;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  float: left;
+}
+.director button {
+  background-color: #fd5278;
+  border-style: none;
+  color: white;
+  font-size: 24px;
+  border-radius: 0;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 2px 8px 1px 6px;
+}*/

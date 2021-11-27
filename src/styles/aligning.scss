@@ -1,0 +1,23 @@
+.flex {
+  display: flex;
+}
+
+.line-container {
+  cursor: pointer;
+  margin-top: 18px;
+  margin-left: 12px;
+  .line {
+    width: 36px;
+    height: 4px;
+    background-color: $purple;
+    transform: rotate(-45deg);
+    margin-top: -4px;
+    &.first {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.container {
+  padding: 16px;
+}

@@ -1,0 +1,27 @@
+$red: #fd5278;
+$blue: #65ffeb;
+$purple: #7b50fb;
+$black: black;
+$yellow: #ce7300;
+//var--(blue)
+//color: var(--#{$color});
+//{$name}
+
+$colors: (
+  'red': #fd5278,
+  'blue': #65ffeb,
+  'purple': #7b50fb,
+  'black': black,
+  'yellow': #ce7300,
+);
+
+@each $name, $color in $colors {
+  .#{$name}-bg {
+    background-color: $color;
+  }
+}
+@each $name, $color in $colors {
+  .#{$name} {
+    color: $color;
+  }
+}

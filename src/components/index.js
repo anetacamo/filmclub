@@ -1,0 +1,11 @@
+export { default as App } from './App';
+export { default as FavouriteMovies } from './favouriteMovies';
+export { default as Featured } from './featured';
+export { default as Form } from './form';
+export { default as Input } from './input.js';
+export { default as MovieDetails } from './movieDetails.js';
+export { default as Search } from './search';
+export { default as SearchResults } from './searchResults';
+export { default as Stars } from './stars.js';
+export { default as SuggestedMovies } from './suggestedMovies';
+export { default as UserForm } from './userForm.js';

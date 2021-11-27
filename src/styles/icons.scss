@@ -1,0 +1,24 @@
+/* icons */
+.fa-heart {
+  color: $red;
+  &.black {
+    color: black;
+  }
+}
+.fa-eye {
+  color: $purple;
+  &.black {
+    color: black;
+  }
+}
+.fa-lightbulb-o {
+  color: $yellow;
+  &.black {
+    color: black;
+  }
+}
+
+.fa {
+  padding-right: 8px;
+  cursor: pointer;
+}

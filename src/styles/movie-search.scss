@@ -1,0 +1,44 @@
+.results {
+  position: relative;
+  margin-top: -0.75rem;
+}
+.underline {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: $purple;
+  top: 66px;
+  left: 0;
+  z-index: -1;
+}
+.film-details {
+  max-width: 31.25rem;
+}
+
+@media (min-width: 43.75rem) {
+  .favourite-movies {
+    position: absolute;
+    right: 0;
+    top: 4.9375rem;
+    text-align: right;
+    max-width: 18rem;
+    .red {
+      margin-left: 4px;
+    }
+    .purple {
+      margin-left: 4px;
+    }
+  }
+}
+.movie-listing {
+  padding-bottom: 1.5rem;
+}
+
+.language {
+  width: 16px;
+  font-weight: 900;
+  letter-spacing: 0;
+  padding-right: 2px;
+  font-size: 10px;
+  display: inline-block;
+}
