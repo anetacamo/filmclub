@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/filmclub/static/css/main.d9d0fa46.chunk.css",
+    "main.js": "/filmclub/static/js/main.9d572db4.chunk.js",
+    "main.js.map": "/filmclub/static/js/main.9d572db4.chunk.js.map",
+    "runtime-main.js": "/filmclub/static/js/runtime-main.a6665464.js",
+    "runtime-main.js.map": "/filmclub/static/js/runtime-main.a6665464.js.map",
+    "static/css/2.05dd3ac6.chunk.css": "/filmclub/static/css/2.05dd3ac6.chunk.css",
+    "static/js/2.daa4c299.chunk.js": "/filmclub/static/js/2.daa4c299.chunk.js",
+    "static/js/2.daa4c299.chunk.js.map": "/filmclub/static/js/2.daa4c299.chunk.js.map",
+    "index.html": "/filmclub/index.html",
+    "precache-manifest.08913d7e3ef1b2c9d63e230b81d3e03c.js": "/filmclub/precache-manifest.08913d7e3ef1b2c9d63e230b81d3e03c.js",
+    "service-worker.js": "/filmclub/service-worker.js",
+    "static/css/2.05dd3ac6.chunk.css.map": "/filmclub/static/css/2.05dd3ac6.chunk.css.map",
+    "static/css/main.d9d0fa46.chunk.css.map": "/filmclub/static/css/main.d9d0fa46.chunk.css.map",
+    "static/js/2.daa4c299.chunk.js.LICENSE": "/filmclub/static/js/2.daa4c299.chunk.js.LICENSE",
+    "static/media/font-awesome.css": "/filmclub/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a6665464.js",
+    "static/css/2.05dd3ac6.chunk.css",
+    "static/js/2.daa4c299.chunk.js",
+    "static/css/main.d9d0fa46.chunk.css",
+    "static/js/main.9d572db4.chunk.js"
+  ]
+}
