@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/filmclub/static/css/main.07c7a58a.chunk.css",
-    "main.js": "/filmclub/static/js/main.9d572db4.chunk.js",
-    "main.js.map": "/filmclub/static/js/main.9d572db4.chunk.js.map",
+    "main.js": "/filmclub/static/js/main.553d2a7a.chunk.js",
+    "main.js.map": "/filmclub/static/js/main.553d2a7a.chunk.js.map",
     "runtime-main.js": "/filmclub/static/js/runtime-main.a6665464.js",
     "runtime-main.js.map": "/filmclub/static/js/runtime-main.a6665464.js.map",
     "static/css/2.05dd3ac6.chunk.css": "/filmclub/static/css/2.05dd3ac6.chunk.css",
     "static/js/2.daa4c299.chunk.js": "/filmclub/static/js/2.daa4c299.chunk.js",
     "static/js/2.daa4c299.chunk.js.map": "/filmclub/static/js/2.daa4c299.chunk.js.map",
     "index.html": "/filmclub/index.html",
-    "precache-manifest.f716783a3f410c308196f75befc19f68.js": "/filmclub/precache-manifest.f716783a3f410c308196f75befc19f68.js",
+    "precache-manifest.4f3382caad0c99279961908cde4c3abc.js": "/filmclub/precache-manifest.4f3382caad0c99279961908cde4c3abc.js",
     "service-worker.js": "/filmclub/service-worker.js",
     "static/css/2.05dd3ac6.chunk.css.map": "/filmclub/static/css/2.05dd3ac6.chunk.css.map",
     "static/css/main.07c7a58a.chunk.css.map": "/filmclub/static/css/main.07c7a58a.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.05dd3ac6.chunk.css",
     "static/js/2.daa4c299.chunk.js",
     "static/css/main.07c7a58a.chunk.css",
-    "static/js/main.9d572db4.chunk.js"
+    "static/js/main.553d2a7a.chunk.js"
   ]
 }

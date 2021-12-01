@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ba19cea51f7cb5ae60aebc0edbe165e0",
+    "revision": "2dd7b261ccf370454290090c52fe8459",
     "url": "/filmclub/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/filmclub/static/css/2.05dd3ac6.chunk.css"
   },
   {
-    "revision": "84ba29a8c95018677f7a",
+    "revision": "ccfb1ad5ca56c7ec1b2b",
     "url": "/filmclub/static/css/main.07c7a58a.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/filmclub/static/js/2.daa4c299.chunk.js.LICENSE"
   },
   {
-    "revision": "84ba29a8c95018677f7a",
-    "url": "/filmclub/static/js/main.9d572db4.chunk.js"
+    "revision": "ccfb1ad5ca56c7ec1b2b",
+    "url": "/filmclub/static/js/main.553d2a7a.chunk.js"
   },
   {
     "revision": "31691aa6761ac4472bb5",
