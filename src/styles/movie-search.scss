@@ -10,6 +10,9 @@
   top: 66px;
   left: 0;
   z-index: -1;
+  @media (max-width: 600px) {
+    top: 84px;
+  }
 }
 .film-details {
   max-width: 31.25rem;
@@ -21,7 +24,7 @@
     right: 0;
     top: 4.9375rem;
     text-align: right;
-    max-width: 18rem;
+    max-width: 20rem;
     .red {
       margin-left: 4px;
     }

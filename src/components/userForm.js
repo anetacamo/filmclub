@@ -21,18 +21,15 @@ export default function UserForm({ saved, handleSave, handleDownload }) {
     <div className={`user-greet ${isOpen && 'open'}`}>
       <div className='form-head container flex'>
         <div>
-          <p style={{ marginTop: 0 }}>
-            hi, {currentUser?.email || 'unregistered!'}
-          </p>
-
-          {currentUser ? (
-            <p className='red underlined' onClick={handleLogout}>
-              logout
-            </p>
-          ) : (
-            <p className='red underlined' onClick={() => dispatch(open())}>
-              log in to save your movie list
-            </p>
+          {currentUser && (
+            <>
+              <p style={{ marginTop: 0 }}>
+                hi {currentUser?.email.split('@')[0]}
+              </p>
+              <p className='red underlined' onClick={handleLogout}>
+                logout
+              </p>
+            </>
           )}
         </div>
         {currentUser && (
@@ -40,6 +37,17 @@ export default function UserForm({ saved, handleSave, handleDownload }) {
             {saved ? 'saved' : 'save'}
           </button>
         )}
+        {!currentUser && !isOpen && (
+          <>
+            <button className={`small`} onClick={() => dispatch(open())}>
+              LOGIN
+            </button>
+            <button className={`small`} onClick={() => dispatch(open())}>
+              SIGNUP
+            </button>
+          </>
+        )}
+
         {isOpen && (
           <div className='line-container' onClick={() => dispatch(open())}>
             <div className='line first'></div>

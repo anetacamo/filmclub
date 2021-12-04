@@ -18,13 +18,6 @@ const MovieDetails = ({ movie, handleFeatured, storedMovies }) => {
             icon='fa-heart'
             type='like'
           />
-          {/*
-          <Featured
-            onClick={handleFeatured}
-            featured={storedMovies.find((film) => film.id === movie.id)?.seen}
-            icon='fa-eye'
-            type='seen'
-          /> */}
           <Featured
             onClick={handleFeatured}
             featured={
@@ -33,7 +26,7 @@ const MovieDetails = ({ movie, handleFeatured, storedMovies }) => {
             icon='fa-lightbulb-o'
             type='suggested'
           />
-          <Stars popularity={movie.vote_average / 2} />
+          {/*<Stars popularity={movie.vote_average / 2} /> */}
           <span className='red bold'>{movie.vote_average}</span>
           {movie.runtime && <span> {movie.runtime} min</span>}
           <p>{movie.overview}</p>
@@ -43,6 +36,15 @@ const MovieDetails = ({ movie, handleFeatured, storedMovies }) => {
             <b>original language</b> {movie.original_language}
             <br></br>
           </p>
+          <br />
+          <button
+            className='small'
+            onClick={() => handleFeatured({ type: 'suggested' })}
+          >
+            {storedMovies.find((film) => film.id === movie.id)?.suggested
+              ? 'UNVOTE'
+              : 'VOTE FOR THIS'}
+          </button>
         </div>
       ) : (
         <p></p>

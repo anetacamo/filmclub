@@ -58,6 +58,10 @@ input {
   &::placeholder {
     color: $purple;
   }
+  @media (max-width: 600px) {
+    font-size: 2rem;
+    padding-top: 2.5rem;
+  }
 }
 
 ::placeholder {
@@ -66,21 +70,3 @@ input {
 ::-ms-input-placeholder {
   color: lightgray;
 }
-
-/* unused 
-.director input {
-  border-radius: 0;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  float: left;
-}
-.director button {
-  background-color: #fd5278;
-  border-style: none;
-  color: white;
-  font-size: 24px;
-  border-radius: 0;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  padding: 2px 8px 1px 6px;
-}*/

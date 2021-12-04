@@ -51,7 +51,7 @@ export default function Form({ handleDownload, handleOpen }) {
       </p>
       {success || (
         <button disabled={loading} onClick={handleSignup}>
-          signin
+          signup
         </button>
       )}
       <button disabled={loading} onClick={handleLogin}>
@@ -64,11 +64,18 @@ export default function Form({ handleDownload, handleOpen }) {
         Do I have to sign up?
       </h5>
       {openInfo && (
-        <p>
-          when you sign up you can save movies and access them from different
-          computers. <br />
-          And your list will not be deleted upon clearing browser data.
-        </p>
+        <>
+          <p>
+            when you sign up you can save movies and access them from different
+            computers. <br />
+            And your list will not be deleted upon clearing browser data.
+          </p>
+          <p className='red'>
+            Hacking each others accounts and creating multiple fake accounts
+            <br /> and suggesting bad movies to watch is stronly unrecommended
+            and might RESULT INTO BANNING. NO MERCY
+          </p>
+        </>
       )}
     </div>
   );

@@ -40,19 +40,23 @@ export default function App() {
 
     const unsubscribe = onSnapshot(collection(db, 'users'), (snapshot) => {
       // here collect all the suggested movies and store them in suggested items in one level array.
-      const allUsersData = snapshot.docs.map((doc) =>
-        JSON.parse(doc.data().movies)
-      );
-      console.log('alluser', allUsersData);
+      console.log(snapshot.docs);
+
       let suggestedItems = [];
-      allUsersData.map((array) => {
-        if (array !== null) {
+      const allUsersData = snapshot.docs.map((doc) => {
+        const array = JSON.parse(doc.data().movies);
+        console.log(JSON.parse(doc.data().movies));
+        if (array !== []) {
           array.filter((item) => {
             item.suggested && suggestedItems.push(item);
           });
         }
       });
+      console.log('alluser', allUsersData);
+      // let suggestedItems = [];
+
       setAllSuggested(suggestedItems);
+      console.log(suggestedItems);
 
       // user is signed:
       if (currentUser) {
@@ -69,7 +73,6 @@ export default function App() {
           // else take the users movies from its db and set them to storedMovies
         } else {
           const moviesFromDb = JSON.parse(user[0].data().movies);
-          console.log(moviesFromDb);
           if (moviesFromDb !== null) {
             setStoredMovies(removeIncomplete(moviesFromDb));
           }
@@ -82,6 +85,7 @@ export default function App() {
   }, [download, currentUser]);
 
   function updateStoredMovies(m) {
+    // here I copy the list of liked and suggested movies WITHOUT the incoming movie
     const moviesWithoutSelected = storedMovies.filter(
       (film) => film.id !== m.id
     );
@@ -89,8 +93,12 @@ export default function App() {
     //the movie IS in the list
     if (isMovieHere(m.id, storedMovies)) {
       //remove it from the list ONLY if the movie has all features set to none
-      if (m.liked === undefined && m.suggested === undefined) {
-        updatedMovies = [...moviesWithoutSelected];
+      if (m.like === undefined) {
+        if (m.suggested === undefined) {
+          updatedMovies = [...moviesWithoutSelected];
+        } else {
+          updatedMovies = [...moviesWithoutSelected, m];
+        }
       } else {
         //otherwise update the list
         updatedMovies = [...moviesWithoutSelected, m];
@@ -122,7 +130,7 @@ export default function App() {
   };
 
   function saveMovies(movies) {
-    console.log('saving movies');
+    console.log('saving movies to local storage');
     localStorage.setItem('films', JSON.stringify(movies));
     setStoredMovies(movies);
   }
@@ -130,7 +138,7 @@ export default function App() {
   //only save to storage onclick.
   async function saveMoviesToDb(movies) {
     // if logged in, sent to db
-    console.log('movies saved to db');
+    console.log('saving movies to online db');
     if (currentUser === undefined || currentUser === null) {
       setSaved(false);
     } else {
@@ -143,13 +151,26 @@ export default function App() {
 
   // on feature icon click update the selected movie. then stored Movies
   function onFeatureChange(movie, feature) {
+    console.log('featured changed', feature);
     const fState = movie[feature] === true ? undefined : true;
+    console.log('feature state', fState);
     const updatedMovie = { ...movie, [feature]: fState };
+    console.log(
+      'updated movie like: ',
+      updatedMovie.like,
+      updatedMovie.suggested
+    );
     const simplified = simplifyMovie(updatedMovie);
     setSelectedMovie(simplified);
-
+    console.log(
+      'simplified movie like: ',
+      simplified.like,
+      simplified.suggested
+    );
     //on the feature change, update stored movies
     const updatedMovies = updateStoredMovies(simplified);
+    console.log(simplified);
+    console.log(updatedMovies);
     saveMovies(updatedMovies);
     setSaved(false);
   }
@@ -179,20 +200,14 @@ export default function App() {
       <div className='favourite-movies container'>
         {currentUser && (
           <FavouriteMovies
-            listName='liked movies'
+            listName='your liked movies'
             moviesList={storedMovies.filter((movie) => movie.like)}
             handleClick={setSelectedMovie}
           />
         )}
-        {/*
-        <FavouriteMovies
-          listName='seen movies'
-          moviesList={storedMovies.filter((movie) => movie.seen)}
-          handleClick={setSelectedMovie}
-        />*/}
         {currentUser && (
           <FavouriteMovies
-            listName='suggested movies'
+            listName='your suggested movies'
             moviesList={storedMovies.filter((movie) => movie.suggested)}
             handleClick={setSelectedMovie}
           />
