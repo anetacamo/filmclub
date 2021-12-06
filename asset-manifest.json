@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/filmclub/static/css/main.301c3265.chunk.css",
-    "main.js": "/filmclub/static/js/main.9319ce1e.chunk.js",
-    "main.js.map": "/filmclub/static/js/main.9319ce1e.chunk.js.map",
+    "main.css": "/filmclub/static/css/main.cb3ef559.chunk.css",
+    "main.js": "/filmclub/static/js/main.320e33de.chunk.js",
+    "main.js.map": "/filmclub/static/js/main.320e33de.chunk.js.map",
     "runtime-main.js": "/filmclub/static/js/runtime-main.a6665464.js",
     "runtime-main.js.map": "/filmclub/static/js/runtime-main.a6665464.js.map",
     "static/css/2.05dd3ac6.chunk.css": "/filmclub/static/css/2.05dd3ac6.chunk.css",
     "static/js/2.daa4c299.chunk.js": "/filmclub/static/js/2.daa4c299.chunk.js",
     "static/js/2.daa4c299.chunk.js.map": "/filmclub/static/js/2.daa4c299.chunk.js.map",
     "index.html": "/filmclub/index.html",
-    "precache-manifest.9573f6c2e9958300f644dfb1b5fbd137.js": "/filmclub/precache-manifest.9573f6c2e9958300f644dfb1b5fbd137.js",
+    "precache-manifest.68a6f93fed07e0ad69c451013dd05cc4.js": "/filmclub/precache-manifest.68a6f93fed07e0ad69c451013dd05cc4.js",
     "service-worker.js": "/filmclub/service-worker.js",
     "static/css/2.05dd3ac6.chunk.css.map": "/filmclub/static/css/2.05dd3ac6.chunk.css.map",
-    "static/css/main.301c3265.chunk.css.map": "/filmclub/static/css/main.301c3265.chunk.css.map",
+    "static/css/main.cb3ef559.chunk.css.map": "/filmclub/static/css/main.cb3ef559.chunk.css.map",
     "static/js/2.daa4c299.chunk.js.LICENSE": "/filmclub/static/js/2.daa4c299.chunk.js.LICENSE",
     "static/media/font-awesome.css": "/filmclub/static/media/fontawesome-webfont.fee66e71.woff"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.a6665464.js",
     "static/css/2.05dd3ac6.chunk.css",
     "static/js/2.daa4c299.chunk.js",
-    "static/css/main.301c3265.chunk.css",
-    "static/js/main.9319ce1e.chunk.js"
+    "static/css/main.cb3ef559.chunk.css",
+    "static/js/main.320e33de.chunk.js"
   ]
 }
