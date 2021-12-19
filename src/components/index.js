@@ -9,3 +9,4 @@ export { default as SearchResults } from './searchResults';
 export { default as Stars } from './stars.js';
 export { default as SuggestedMovies } from './suggestedMovies';
 export { default as UserForm } from './userForm.js';
+export { default as WatchedMovies } from './watchedMovies.js';

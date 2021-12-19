@@ -5,6 +5,7 @@ import {
   Search,
   SuggestedMovies,
   UserForm,
+  WatchedMovies,
 } from './';
 import { useAuth } from '../firebase';
 import db from '../firebase';
@@ -198,13 +199,13 @@ export default function App() {
         />
       )}
       <div className='favourite-movies container'>
-        {currentUser && (
+        {/*
           <FavouriteMovies
             listName='your liked movies'
             moviesList={storedMovies.filter((movie) => movie.like)}
             handleClick={setSelectedMovie}
           />
-        )}
+        */}
         {currentUser && (
           <FavouriteMovies
             listName='your suggested movies'
@@ -214,6 +215,12 @@ export default function App() {
         )}
         <SuggestedMovies
           listName='suggested by all'
+          movies={allSuggested}
+          handleClick={setSelectedMovie}
+        />
+        <br />
+        <WatchedMovies
+          listName='movies we watched'
           movies={allSuggested}
           handleClick={setSelectedMovie}
         />

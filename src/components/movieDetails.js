@@ -1,7 +1,10 @@
 import React from 'react';
-import { Featured, Stars } from '.';
+import { Featured } from '.';
+import { useAuth } from '../firebase';
+import seen from '../seen.json';
 
 const MovieDetails = ({ movie, handleFeatured, storedMovies }) => {
+  const currentUser = useAuth();
   return (
     <div className='film-details container'>
       {movie ? (
@@ -12,20 +15,26 @@ const MovieDetails = ({ movie, handleFeatured, storedMovies }) => {
               <span className='red'> {movie.original_title}</span>
             ) : null}
           </h2>
-          <Featured
-            onClick={handleFeatured}
-            featured={storedMovies.find((film) => film.id === movie.id)?.like}
-            icon='fa-heart'
-            type='like'
-          />
-          <Featured
-            onClick={handleFeatured}
-            featured={
-              storedMovies.find((film) => film.id === movie.id)?.suggested
-            }
-            icon='fa-lightbulb-o'
-            type='suggested'
-          />
+          {/*}
+          {currentUser && (
+            <Featured
+              onClick={handleFeatured}
+              featured={storedMovies.find((film) => film.id === movie.id)?.like}
+              icon='fa-heart'
+              type='like'
+            />
+          )}
+          */}
+          {currentUser && (
+            <Featured
+              onClick={handleFeatured}
+              featured={
+                storedMovies.find((film) => film.id === movie.id)?.suggested
+              }
+              icon='fa-lightbulb-o'
+              type='suggested'
+            />
+          )}
           {/*<Stars popularity={movie.vote_average / 2} /> */}
           <span className='red bold'>{movie.vote_average}</span>
           {movie.runtime && <span> {movie.runtime} min</span>}
@@ -37,14 +46,23 @@ const MovieDetails = ({ movie, handleFeatured, storedMovies }) => {
             <br></br>
           </p>
           <br />
-          <button
-            className='small'
-            onClick={() => handleFeatured({ type: 'suggested' })}
-          >
-            {storedMovies.find((film) => film.id === movie.id)?.suggested
-              ? 'UNVOTE'
-              : 'VOTE FOR THIS'}
-          </button>
+
+          {seen.some((film) => film.id === movie.id) ? (
+            <h5 className='purple'>{`we watched this movie on ${
+              seen.find((film) => film.id === movie.id).watched
+            }`}</h5>
+          ) : currentUser ? (
+            <button
+              className='small'
+              onClick={() => handleFeatured({ type: 'suggested' })}
+            >
+              {storedMovies.find((film) => film.id === movie.id)?.suggested
+                ? 'UNVOTE'
+                : 'VOTE FOR THIS'}
+            </button>
+          ) : (
+            <h5 className='purple'>login or sign up to vote</h5>
+          )}
         </div>
       ) : (
         <p></p>

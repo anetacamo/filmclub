@@ -20,6 +20,7 @@ button {
     transition-duration: 350ms;
     background-color: $red;
     color: white;
+    cursor: default;
   }
   &.small {
     padding: 7px 14px;
@@ -35,6 +36,11 @@ button {
     background-color: #f2f2f2;
     color: gray;
     border-color: #f2f2f2;
+  }
+  &.green {
+    border-color: #099e58;
+    background-color: #099e58;
+    color: white;
   }
 }
 

@@ -31,6 +31,8 @@ export default function Form({ handleDownload, handleOpen }) {
     setLoading(false);
     console.log('logged in. download movies now!');
     handleDownload();
+    handleOpen(false);
+    console.log('CLOSED THE TAB!');
   }
   return (
     <div className='signup-form'>
@@ -46,9 +48,6 @@ export default function Form({ handleDownload, handleOpen }) {
         type='password'
         onInputChange={(e) => setPassword(e)}
       />
-      <p style={{ marginTop: -4 }}>
-        *your data will not be shared with anybody else.
-      </p>
       {success || (
         <button disabled={loading} onClick={handleSignup}>
           signup
@@ -64,18 +63,11 @@ export default function Form({ handleDownload, handleOpen }) {
         Do I have to sign up?
       </h5>
       {openInfo && (
-        <>
-          <p>
-            when you sign up you can save movies and access them from different
-            computers. <br />
-            And your list will not be deleted upon clearing browser data.
-          </p>
-          <p className='red'>
-            Hacking each others accounts and creating multiple fake accounts
-            <br /> and suggesting bad movies to watch is stronly unrecommended
-            and might RESULT INTO BANNING. NO MERCY
-          </p>
-        </>
+        <p>
+          when you sign up you can save movies and access them from different
+          computers. <br />
+          And your list will not be deleted upon clearing browser data.
+        </p>
       )}
     </div>
   );

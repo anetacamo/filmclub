@@ -33,8 +33,12 @@ export default function UserForm({ saved, handleSave, handleDownload }) {
           )}
         </div>
         {currentUser && (
-          <button className={`small ${saved || 'gray'}`} onClick={handleSave}>
-            {saved ? 'saved' : 'save'}
+          <button
+            className={`small ${!saved || 'green'}`}
+            onClick={handleSave}
+            disabled={saved}
+          >
+            {saved ? 'saved' : 'submit your choices!'}
           </button>
         )}
         {!currentUser && !isOpen && (

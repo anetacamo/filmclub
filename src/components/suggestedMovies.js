@@ -1,4 +1,5 @@
 import React from 'react';
+import seen from '../seen.json';
 
 export default function SuggestedMovies({ movies, handleClick, listName }) {
   let results = Object.values(
@@ -31,18 +32,24 @@ export default function SuggestedMovies({ movies, handleClick, listName }) {
       </h5>
 
       {movies?.length > 0 &&
-        results.map((movie) => (
-          <h5 key={movie.id} onClick={() => handleClick(getMovie(movie.id))}>
-            {getMovie(movie.id).title}
-            <span className='red'>
-              {getMovie(movie.id).release_date.substring(0, 4)}
-            </span>
-            <span className='red language'>
-              {getMovie(movie.id).original_language}
-            </span>
-            <span className='purple bolded bold'>{movie.count}</span>
-          </h5>
-        ))}
+        results.map(
+          (movie) =>
+            !seen.some((film) => film.id === movie.id) && (
+              <h5
+                key={movie.id}
+                onClick={() => handleClick(getMovie(movie.id))}
+              >
+                {getMovie(movie.id).title}
+                <span className='red'>
+                  {getMovie(movie.id).release_date.substring(0, 4)}
+                </span>
+                <span className='red language'>
+                  {getMovie(movie.id).original_language}
+                </span>
+                <span className='purple bolded bold'>{movie.count}</span>
+              </h5>
+            )
+        )}
     </div>
   );
 }
